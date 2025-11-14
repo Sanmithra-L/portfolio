@@ -1,0 +1,6 @@
+/* Root layout reset for full-width Tailwind app.
+ * Ensures the React root spans the viewport without centering constraints.
+ */
+#root {
+  min-height: 100vh;
+}
