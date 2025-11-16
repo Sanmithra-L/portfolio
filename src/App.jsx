@@ -1,18 +1,37 @@
+import { useState } from 'react'
 import './App.css'
 import AvatarWithEyes from './components/AvatarWithEyes.jsx'
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const scrollTo = (id) => {
     const el = document.getElementById(id)
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
+    setIsMenuOpen(false)
   }
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="flex min-h-screen w-full flex-col px-4 pb-12 pt-4 sm:px-6">
-        <header className="flex items-center justify-end gap-4 py-3">
+      <div className="flex min-h-screen w-full flex-col px-4 pb-12 pt-3 sm:px-6">
+        <header className="flex items-center justify-between gap-4 py-2">
+          <div className="text-sm font-semibold tracking-[0.25em] text-sky-400/80 sm:text-xs">
+            SANMITHRA
+          </div>
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-200 shadow-sm sm:hidden"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-label="Toggle navigation menu"
+          >
+            <span className="mr-1 text-[10px] font-medium">Menu</span>
+            <span className="flex flex-col gap-[3px]">
+              <span className="h-[2px] w-3 bg-slate-200" />
+              <span className="h-[2px] w-3 bg-slate-200" />
+            </span>
+          </button>
           <nav className="hidden gap-6 text-sm text-slate-300 sm:flex">
             <button onClick={() => scrollTo('about')} className="transition-colors hover:text-sky-400">
               About
@@ -31,6 +50,42 @@ function App() {
             </button>
           </nav>
         </header>
+
+        {/* Mobile nav menu */}
+        {isMenuOpen && (
+          <nav className="mb-3 flex flex-col gap-1 rounded-xl border border-slate-800 bg-slate-900/90 p-3 text-sm text-slate-200 shadow-lg sm:hidden">
+            <button
+              onClick={() => scrollTo('about')}
+              className="rounded-md px-2 py-1 text-left hover:bg-slate-800/80"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollTo('skills')}
+              className="rounded-md px-2 py-1 text-left hover:bg-slate-800/80"
+            >
+              Skills
+            </button>
+            <button
+              onClick={() => scrollTo('projects')}
+              className="rounded-md px-2 py-1 text-left hover:bg-slate-800/80"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => scrollTo('experience')}
+              className="rounded-md px-2 py-1 text-left hover:bg-slate-800/80"
+            >
+              Experience
+            </button>
+            <button
+              onClick={() => scrollTo('contact')}
+              className="rounded-md px-2 py-1 text-left hover:bg-slate-800/80"
+            >
+              Contact
+            </button>
+          </nav>
+        )}
 
         <main className="mt-4 flex flex-1 flex-col gap-16 pb-10">
           {/* Hero */}
