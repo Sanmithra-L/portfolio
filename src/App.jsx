@@ -11,16 +11,8 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="flex min-h-screen w-full flex-col px-6 pb-12 pt-6">
-        <header className="flex items-center justify-between gap-4 py-4">
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-400/80">
-              Software Engineer
-            </span>
-            <h1 className="text-2xl font-semibold text-slate-100 sm:text-3xl">
-              Sanmithra L
-            </h1>
-          </div>
+      <div className="flex min-h-screen w-full flex-col px-4 pb-12 pt-4 sm:px-6">
+        <header className="flex items-center justify-end gap-4 py-3">
           <nav className="hidden gap-6 text-sm text-slate-300 sm:flex">
             <button onClick={() => scrollTo('about')} className="transition-colors hover:text-sky-400">
               About
@@ -40,10 +32,16 @@ function App() {
           </nav>
         </header>
 
-        <main className="mt-6 flex flex-1 flex-col gap-16 pb-10">
+        <main className="mt-4 flex flex-1 flex-col gap-16 pb-10">
           {/* Hero */}
-          <section className="grid flex-1 grid-cols-1 items-center gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+          <section className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 rounded-3xl bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/40 px-4 py-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:px-8">
             <div className="space-y-6">
+              <div className="space-y-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-sky-400/80">
+                  Software Engineer
+                </p>
+                <h1 className="text-3xl font-semibold text-slate-50 sm:text-4xl">Sanmithra L</h1>
+              </div>
               <p className="text-sm font-medium uppercase tracking-[0.3em] text-purple-400/80">
                 Transforming ideas into fast, dependable software.
               </p>
@@ -80,29 +78,46 @@ function App() {
           </section>
 
           {/* About */}
-          <section id="about" className="border-t border-slate-800/80 pt-10">
-            <div className="max-w-4xl space-y-4">
-              <h2 className="text-xl font-semibold text-slate-50">About</h2>
-              <p className="text-sm leading-relaxed text-slate-300">
-                Skilled Software Engineer with a Computer Science Engineering degree and a habit of turning coffee
-                into clean, scalable code. I build dynamic web applications, jump between frontend and backend like
-                it&apos;s a side quest, and adapt to new technologies faster than my tabs multiply.
-              </p>
-              <p className="text-sm leading-relaxed text-slate-300">
-                Passionate about crafting efficient, maintainable solutions and obsessing over tiny UX details no one
-                notices — but I know, and that&apos;s enough. Always leveling up, staying curious, and keeping an eye on
-                emerging tech, because in this industry, staying still is basically a bug.
-              </p>
-              <p className="text-sm text-slate-400">
-                Beyond code, you&apos;ll usually find me with a pencil or brush in hand, sketching or painting.
-              </p>
+          <section id="about" className="border-t border-slate-800/80 bg-slate-950/60">
+            <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 pt-10 md:flex-row md:px-8">
+              <div className="flex-1 space-y-4">
+                <h2 className="text-xl font-semibold text-slate-50">About</h2>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  Skilled Software Engineer with a Computer Science Engineering degree and a habit of turning coffee
+                  into clean, scalable code. I build dynamic web applications, jump between frontend and backend like
+                  it&apos;s a side quest, and adapt to new technologies faster than my tabs multiply.
+                </p>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  Passionate about crafting efficient, maintainable solutions and obsessing over tiny UX details no one
+                  notices — but I know, and that&apos;s enough. Always leveling up, staying curious, and keeping an eye on
+                  emerging tech, because in this industry, staying still is basically a bug.
+                </p>
+                <p className="text-sm text-slate-400">
+                  Beyond code, you&apos;ll usually find me with a pencil or brush in hand, sketching or painting.
+                </p>
+              </div>
+              <div className="flex w-full flex-1 items-center justify-center md:justify-end">
+                <div className="w-full max-w-sm rounded-2xl border border-slate-800 bg-slate-900/60 px-5 py-4 text-sm text-slate-300 shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-400/80">
+                    Snapshot
+                  </p>
+                  <p className="mt-3 text-sm">
+                    2+ years building reliable backend and frontend systems, with a bias toward clean architecture,
+                    performance, and thoughtful developer experience.
+                  </p>
+                  <p className="mt-3 text-xs text-slate-400">
+                    Currently focused on Spring Boot services and smooth user experiences in React.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
 
           {/* Skills */}
-          <section id="skills" className="border-t border-slate-800/80 pt-10">
-            <h2 className="mb-4 text-xl font-semibold text-slate-50">Skills &amp; Tech Stack</h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <section id="skills" className="border-t border-slate-800/80 bg-slate-950/60">
+            <div className="mx-auto w-full max-w-6xl px-4 pt-10 md:px-8">
+              <h2 className="mb-4 text-xl font-semibold text-slate-50">Skills &amp; Tech Stack</h2>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <div>
                 <h3 className="text-sm font-semibold text-slate-200">Languages</h3>
                 <ul className="mt-2 space-y-1 text-sm text-slate-300">
@@ -154,13 +169,15 @@ function App() {
                   <li>Painting</li>
                 </ul>
               </div>
+              </div>
             </div>
           </section>
 
           {/* Projects */}
-          <section id="projects" className="border-t border-slate-800/80 pt-10">
-            <h2 className="mb-4 text-xl font-semibold text-slate-50">Projects</h2>
-            <div className="grid gap-6 md:grid-cols-2">
+          <section id="projects" className="border-t border-slate-800/80 bg-slate-950/60">
+            <div className="mx-auto w-full max-w-6xl px-4 pt-10 md:px-8">
+              <h2 className="mb-4 text-xl font-semibold text-slate-50">Projects</h2>
+              <div className="grid gap-6 md:grid-cols-2">
               <article className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm">
                 <h3 className="text-base font-semibold text-slate-100">
                   TOTP-Based Two-Factor Authentication System
@@ -200,64 +217,89 @@ function App() {
                   </a>
                 </div>
               </article>
+              </div>
             </div>
           </section>
 
           {/* Experience & Education */}
-          <section id="experience" className="border-t border-slate-800/80 pt-10">
-            <h2 className="mb-4 text-xl font-semibold text-slate-50">Experience &amp; Education</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-sm font-semibold text-slate-200">Experience</h3>
-                <p className="mt-2 text-sm text-slate-300">2+ years as Software Engineer</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-slate-200">Education</h3>
-                <p className="mt-2 text-sm text-slate-300">BNM Institute of Technology</p>
-                <p className="text-sm text-slate-400">Bachelor of Engineering in Computer Science</p>
+          <section id="experience" className="border-t border-slate-800/80 bg-slate-950/60">
+            <div className="mx-auto w-full max-w-6xl px-4 pt-10 md:px-8">
+              <h2 className="mb-4 text-xl font-semibold text-slate-50">Experience &amp; Education</h2>
+              <div className="grid gap-8 md:grid-cols-2">
+                <div>
+                  <h3 className="text-sm font-semibold text-slate-200">Experience</h3>
+                  <div className="mt-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm text-slate-300">
+                    <p className="font-medium text-slate-100">Software Engineer</p>
+                    <p className="mt-1 text-xs text-slate-400">2+ years</p>
+                    <p className="mt-2 text-sm text-slate-300">
+                      Working across backend services and user-facing features, owning pieces of the stack end-to-end
+                      from design to deployment.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-slate-200">Education</h3>
+                  <div className="mt-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm text-slate-300">
+                    <p className="font-medium text-slate-100">BNM Institute of Technology</p>
+                    <p className="mt-1 text-xs text-slate-400">Bachelor of Engineering in Computer Science</p>
+                    <p className="mt-2 text-sm text-slate-300">
+                      Strong foundations in computer science, algorithms, and system design, now applied to building
+                      production-grade software.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
           {/* Contact */}
-          <section id="contact" className="border-t border-slate-800/80 pt-10">
-            <h2 className="mb-4 text-xl font-semibold text-slate-50">Contact</h2>
-            <div className="space-y-4 text-sm text-slate-300">
-              <p className="font-medium text-slate-100">SANMITHRA L</p>
-              <p>+91 80738 38327 · Bangalore</p>
-              <p>
-                <a href="mailto:sanmithra04@gmail.com" className="text-sky-400 hover:text-sky-300">
-                  sanmithra04@gmail.com
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://linkedin.com/in/sanmithra-l"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sky-400 hover:text-sky-300"
-                >
-                  linkedin.com/in/sanmithra-l
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://github.com/Sanmithra-L"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sky-400 hover:text-sky-300"
-                >
-                  github.com/Sanmithra-L
-                </a>
-              </p>
+          <section id="contact" className="border-t border-slate-800/80 bg-slate-950/60">
+            <div className="mx-auto w-full max-w-6xl px-4 pt-10 md:px-8">
+              <h2 className="mb-4 text-xl font-semibold text-slate-50">Contact</h2>
+              <div className="grid gap-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+                <div className="space-y-3 text-sm text-slate-300">
+                  <p className="font-medium text-slate-100">SANMITHRA L</p>
+                  <p>+91 80738 38327 · Bangalore</p>
+                  <p>
+                    <a href="mailto:sanmithra04@gmail.com" className="text-sky-400 hover:text-sky-300">
+                      sanmithra04@gmail.com
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="https://linkedin.com/in/sanmithra-l"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sky-400 hover:text-sky-300"
+                    >
+                      linkedin.com/in/sanmithra-l
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/Sanmithra-L"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sky-400 hover:text-sky-300"
+                    >
+                      github.com/Sanmithra-L
+                    </a>
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm text-slate-300 shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-400/80">
+                    Let&apos;s collaborate
+                  </p>
+                  <p className="mt-3 text-sm">
+                    Whether it&apos;s backend-heavy systems work or a polished user experience, I&apos;m open to interesting
+                    problems where reliability and clarity matter.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* Blog placeholder */}
-          <section id="blog" className="border-t border-slate-800/80 pt-10">
-            <h2 className="mb-2 text-xl font-semibold text-slate-50">Blog</h2>
-            <p className="text-sm text-slate-400">Coming soon — thoughts on systems, performance, and clean code.</p>
-          </section>
+          {/* Blog section intentionally removed for now */}
         </main>
       </div>
     </div>
