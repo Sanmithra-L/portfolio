@@ -16,10 +16,7 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <div className="flex min-h-screen w-full flex-col px-4 pb-12 pt-3 sm:px-6">
-        <header className="flex items-center justify-between gap-4 py-2">
-          <div className="text-sm font-semibold tracking-[0.25em] text-sky-400/80 sm:text-xs">
-            SANMITHRA
-          </div>
+        <header className="flex items-center justify-end gap-4 py-2">
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-200 shadow-sm sm:hidden"
@@ -115,9 +112,13 @@ function App() {
                 >
                   View Projects
                 </button>
-                <button className="rounded-full border border-slate-600/70 px-5 py-2 text-sm font-medium text-slate-100 transition hover:border-purple-400 hover:text-purple-300">
+                <a
+                  href="/Sanmithra_L.pdf"
+                  download
+                  className="rounded-full border border-slate-600/70 px-5 py-2 text-sm font-medium text-slate-100 transition hover:border-purple-400 hover:text-purple-300"
+                >
                   Download Resume
-                </button>
+                </a>
                 <button
                   onClick={() => scrollTo('contact')}
                   className="rounded-full border border-transparent px-5 py-2 text-sm font-medium text-slate-300 transition hover:text-sky-400"
